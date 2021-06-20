@@ -1,3 +1,3 @@
 # Python
 
-- PyVelha - Jogo da velha feito em Python :hash:
+- PyVelha - tic tac toe made in Python :hash:

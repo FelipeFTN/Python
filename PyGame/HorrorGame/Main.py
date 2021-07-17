@@ -1,26 +1,21 @@
-# Import PyGame
 import pygame
 
 # Initialize PyGame
 pygame.init()
 
-# Create the Screen
+# Create the window
 screen = pygame.display.set_mode((800, 600))
-
-# Title and Icon
 pygame.display.set_caption("Dark Legend")
-icon = pygame.image.load('images/logo.png')
+icon = pygame.image.load("images/Logo.png")
 pygame.display.set_icon(icon)
 
 # Player
-playerIcon = pygame.image.load('images/Player.png')
+playerImg = pygame.image.load('images/PlayerResized.png')
 playerX = 370
 playerY = 480
-playerDX = 0
-playerDY = 0
 
-def player(x, y):
-	screen.blit(playerIcon, (x, y))
+def player():
+	screen.blit(playerImg, (playerX, playerY))
 
 # Game Loop
 running = True
@@ -28,8 +23,6 @@ while running:
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
 			running = False
-	# Screen Color
-	screen.fill((255, 255, 255))
-	
-	player(playerX, playerY)
+
+	player()
 	pygame.display.update()

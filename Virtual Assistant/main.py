@@ -24,13 +24,19 @@ def listen():
 	except:
 		pass
 	return command
+	
 
 def run():
-	command = listen()
-	if 'tocar' in command:
-		song = command.replace('tocar', '')
-		talk('Reproduzindo ' + song)
-		pywhatkit.playonyt(song)
+	try:
+		command = listen()
+		if command != None:
+			if 'tocar' in command:
+				print(command)
+				song = command.replace('tocar', '')
+				talk('Reproduzindo ' + song)
+				pywhatkit.playonyt(song)
+	except:
+		run()
 
 while True:
 	run()

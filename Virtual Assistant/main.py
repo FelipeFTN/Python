@@ -29,7 +29,7 @@ def listen():
 def run():
 	try:
 		command = listen()
-		if command != None:
+		if command != None: #Remove this on next patch
 			if 'tocar' in command:
 				print(command)
 				song = command.replace('tocar', '')

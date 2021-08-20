@@ -4,6 +4,7 @@ import pywhatkit
 import wikipedia
 import datetime
 
+wikipedia.set_lang("pt")
 listener = sr.Recognizer()
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
@@ -38,7 +39,7 @@ def run():
 			pywhatkit.playonyt(song)
 		elif 'pesquisar' in command:
 			search = command.replace('pesquisar', '')
-			information = wikipedia.summary(search, 1)
+			information = wikipedia.summary(search, 2)
 			talk(information)
 		elif 'horário' in command:
 			time = str(datetime.datetime.now().time())

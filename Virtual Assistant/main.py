@@ -1,6 +1,8 @@
 import speech_recognition as sr
 import pyttsx3
 import pywhatkit
+import wikipedia
+import datetime
 
 listener = sr.Recognizer()
 engine = pyttsx3.init()
@@ -23,18 +25,28 @@ def listen():
 				command = command.replace('computador', '')
 	except:
 		pass
+	print(command)
 	return command
-	
 
 def run():
 	try:
 		command = listen()
-		if command != None: #Remove this on next patch
-			if 'tocar' in command:
-				print(command)
-				song = command.replace('tocar', '')
-				talk('Reproduzindo ' + song)
-				pywhatkit.playonyt(song)
+		if 'tocar' in command:
+			print(command)
+			song = command.replace('tocar', '')
+			talk('Reproduzindo ' + song)
+			pywhatkit.playonyt(song)
+		elif 'pesquisar' in command:
+			search = command.replace('pesquisar', '')
+			information = wikipedia.summary(search, 1)
+			talk(information)
+		elif 'horário' in command:
+			time = str(datetime.datetime.now().time())
+			formatedTime = time.split(":")
+			formatedTime.pop()
+			time = str(formatedTime[0] + " e " + formatedTime[1])
+			talk("Agora são " + time)
+			print(time)
 	except:
 		run()
 

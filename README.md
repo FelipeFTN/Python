@@ -18,3 +18,7 @@ No game was made yet, but I have some future projects that I will work on with p
 
 Probably the most difficult framework that I ever use in Python, you may find this project in the following directory: ```Python/Django```
 You can run using ```python manage.py runserver```and it will open a new port ```8000``` in your localhost (127.0.0.1:8000).
+
+### Virtual Assistant • Talking to my computer :sunglasses:
+
+It's just a simple implementation of a voice recognition module in python to help me understanding some fundamentals.
